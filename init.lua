@@ -1,1 +1,1 @@
-require('baron')
+require('lore')
