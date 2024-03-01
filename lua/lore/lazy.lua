@@ -15,5 +15,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true }
+	-- [[ Colorschemes ]]
+	
+	-- https://github.com/ellisonleao/gruvbox.nvim
+	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+
+
+	-- [[ Treesitter ]]
+	
+	-- https://github.com/nvim-treesitter/nvim-treesitter
+	{   "nvim-treesitter/nvim-treesitter",
+	    build = ":TSUpdate",
+	    config = function () 
+	      local configs = require("nvim-treesitter.configs")
+
+	      configs.setup({
+		  ensure_installed = { "c", "lua", "vim", "vimdoc", "html" },
+		  sync_install = false,
+		  highlight = { enable = true },
+		  indent = { enable = true },  
+		})
+	    end
+	}
 }, {})
