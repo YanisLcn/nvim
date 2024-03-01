@@ -1,22 +1,30 @@
--- [[ Configure Telescope ]]
+--  [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtins = require('telescope.builtin')
+local action_layout = require("telescope.actions.layout")
 
 telescope.setup {
   defaults = {
     mappings = {
       i = {
         ['<C-u>'] = false,
+        ["<M-p>"] = action_layout.toggle_preview,
+      },
+      n = {
+        ["<M-p>"] = action_layout.toggle_preview,
       },
     },
   },
   pickers = {
     buffers = {
+      find_files = {
+        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+      },
       mappings = {
-	i = {
+	    i = {
           ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
         },
       },
