@@ -1,0 +1,1 @@
+require('lore.plugins.colorscheme')
