@@ -30,7 +30,19 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
-    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+    },
   },
 
   -- [[ Autocompletion ]]
@@ -75,7 +87,9 @@ require('lazy').setup({
 
   -- [[ Git ]]
   {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
   },
+
+  -- [[ Miscellaneous ]]
+  { 'numToStr/Comment.nvim', opts = {} },
 }, {})
