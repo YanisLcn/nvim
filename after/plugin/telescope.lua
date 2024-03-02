@@ -7,29 +7,26 @@ local builtins = require('telescope.builtin')
 local action_layout = require("telescope.actions.layout")
 
 telescope.setup {
-  defaults = {
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ["<M-p>"] = action_layout.toggle_preview,
-      },
-      n = {
-        ["<M-p>"] = action_layout.toggle_preview,
-      },
-    },
-  },
-  pickers = {
-    buffers = {
-      find_files = {
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
-      },
-      mappings = {
-	    i = {
-          ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+    defaults = {
+        mappings = {
+            i = {
+                ['<C-u>'] = false,
+                ["<M-p>"] = action_layout.toggle_preview,
+            },
+            n = {
+                ["<M-p>"] = action_layout.toggle_preview,
+            },
         },
-      },
     },
-  },
+    pickers = {
+        buffers = {
+            mappings = {
+                i = {
+                    ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+                },
+            },
+        },
+    },
 }
 
 -- Enable telescope fzf native, if installed
@@ -39,11 +36,11 @@ pcall(telescope.load_extension, 'fzf')
 vim.keymap.set('n', '<leader>?', builtins.oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', builtins.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  builtins.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
+    -- You can pass additional configuration to telescope to change theme, layout, etc.
+    builtins.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', builtins.git_files, { desc = 'Search [G]it [F]iles' })
