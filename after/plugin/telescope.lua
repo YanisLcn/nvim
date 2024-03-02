@@ -1,20 +1,20 @@
 --  [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 
-local telescope = require('telescope')
-local actions = require('telescope.actions')
-local builtins = require('telescope.builtin')
-local action_layout = require("telescope.actions.layout")
+local telescope = require 'telescope'
+local actions = require 'telescope.actions'
+local builtins = require 'telescope.builtin'
+local action_layout = require 'telescope.actions.layout'
 
 telescope.setup {
     defaults = {
         mappings = {
             i = {
                 ['<C-u>'] = false,
-                ["<M-p>"] = action_layout.toggle_preview,
+                ['<M-p>'] = action_layout.toggle_preview,
             },
             n = {
-                ["<M-p>"] = action_layout.toggle_preview,
+                ['<M-p>'] = action_layout.toggle_preview,
             },
         },
     },
@@ -22,9 +22,17 @@ telescope.setup {
         buffers = {
             mappings = {
                 i = {
-                    ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+                    ['<c-d>'] = actions.delete_buffer + actions.move_to_top,
                 },
             },
+        },
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = 'smart_case',
         },
     },
 }
@@ -45,6 +53,9 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', builtins.git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', builtins.find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sa', function()
+    builtins.find_files { cwd = '~' }
+end, { desc = '[S]earch among [A]ll files' })
 vim.keymap.set('n', '<leader>sh', builtins.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtins.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtins.live_grep, { desc = '[S]earch by [G]rep' })
