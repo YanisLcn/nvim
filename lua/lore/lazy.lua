@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.localmapleader = ' '
 
+vim.cmd [[ set termguicolors ]]
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system {
@@ -107,4 +109,5 @@ require('lazy').setup({
             'nvim-tree/nvim-web-devicons',
         },
     },
+    { 'norcalli/nvim-colorizer.lua' },
 }, {})
