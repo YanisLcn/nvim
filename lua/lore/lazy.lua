@@ -86,9 +86,8 @@ require('lazy').setup({
     { 'mhartington/formatter.nvim' },
 
     -- [[ Git ]]
-    {
-        'lewis6991/gitsigns.nvim',
-    },
+    { 'lewis6991/gitsigns.nvim' },
+    { 'tpope/vim-fugitive' },
 
     -- [[ Miscellaneous ]]
     { 'numToStr/Comment.nvim', opts = {} },
