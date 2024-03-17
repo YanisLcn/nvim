@@ -19,8 +19,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     -- [[ Colorschemes ]]
 
-    -- https://github.com/ellisonleao/gruvbox.nvim
-    { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
+    { 'navarasu/onedark.nvim', priority = 1000, config = true },
+    { 'ellisonleao/gruvbox.nvim', priority = 100, config = true },
 
     -- [[ Treesitter ]]
     {
