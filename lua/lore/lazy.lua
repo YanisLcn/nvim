@@ -19,8 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     -- [[ Colorschemes ]]
 
-    { 'navarasu/onedark.nvim', priority = 1000, config = true },
-    { 'ellisonleao/gruvbox.nvim', priority = 100, config = true },
+    { 'navarasu/onedark.nvim' },
+    { 'ellisonleao/gruvbox.nvim' },
+    { 'tiagovla/tokyodark.nvim' },
 
     -- [[ Treesitter ]]
     {
@@ -110,7 +111,7 @@ require('lazy').setup({
         },
     },
     { 'norcalli/nvim-colorizer.lua' },
-    {'folke/trouble.nvim', opts = {}},
+    { 'folke/trouble.nvim', opts = {} },
 
     -- [[ Languages ]]
 
