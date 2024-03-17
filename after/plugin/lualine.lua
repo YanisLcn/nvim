@@ -1,5 +1,3 @@
-print ("2 " .. Session_theme)
-
 require('lualine').setup {
     options = {
         icons_enabled = true,
