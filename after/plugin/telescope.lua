@@ -45,9 +45,9 @@ vim.keymap.set('n', '<leader>?', builtins.oldfiles, { desc = '[?] Find recently 
 vim.keymap.set('n', '<leader><space>', builtins.buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
-    builtins.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    builtins.current_buffer_fuzzy_find(require('telescope.themes').get_ivy {
         winblend = 10,
-        previewer = false,
+        previewer = true,
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
