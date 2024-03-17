@@ -25,7 +25,7 @@ require('rose-pine').setup {
 
 local function random_theme()
     local available_colorschemes =
-        { 'onedark', 'gruvbox', 'tokyodark', 'catppuccin-frappe', 'catppuccin-macchiato', 'catppuccin-mocha', 'kanagawa', 'rose-pine' }
+        { 'onedark', 'gruvbox', 'tokyodark', 'catppuccin-frappe', 'catppuccin-macchiato', 'catppuccin-mocha', 'kanagawa', 'duskfox', 'rose-pine' }
     return available_colorschemes[math.random(#available_colorschemes)]
 end
 
