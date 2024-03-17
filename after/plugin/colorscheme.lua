@@ -13,7 +13,22 @@ require('tokyodark').setup {
     terminal_colors = true,
 }
 
-local available_colorschemes = { 'onedark', 'gruvbox', 'tokyodark' }
-local cs = available_colorschemes[math.random(#available_colorschemes)]
+-- Kanagawa.nvim
+require('kanagawa').setup {
+    theme = 'wave',
+}
 
-vim.cmd("colorscheme " .. cs)
+-- Rosé-Pine.nvim
+require('rose-pine').setup {
+    variant = 'moon',
+}
+
+local function random_theme()
+    local available_colorschemes =
+        { 'onedark', 'gruvbox', 'tokyodark', 'catppuccin-frappe', 'catppuccin-macchiato', 'catppuccin-mocha', 'kanagawa', 'rose-pine' }
+    return available_colorschemes[math.random(#available_colorschemes)]
+end
+
+Session_theme = random_theme()
+
+vim.cmd('colorscheme ' .. Session_theme)

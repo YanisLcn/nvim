@@ -22,6 +22,10 @@ require('lazy').setup({
     { 'navarasu/onedark.nvim' },
     { 'ellisonleao/gruvbox.nvim' },
     { 'tiagovla/tokyodark.nvim' },
+    { 'catppuccin/nvim', name = 'catppuccin' },
+    { 'rebelot/kanagawa.nvim' },
+    { 'EdenEast/nightfox.nvim' },
+    { 'rose-pine/neovim', name = 'rose-pine' },
 
     -- [[ Treesitter ]]
     {
