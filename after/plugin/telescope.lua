@@ -64,6 +64,3 @@ vim.keymap.set('n', '<leader>sw', builtins.grep_string, { desc = '[S]earch curre
 vim.keymap.set('n', '<leader>sg', builtins.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', builtins.diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', builtins.resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<leader>cs', function()
-    builtins.colorscheme {}
-end, { desc = 'Select [C]olor[S]cheme' })
