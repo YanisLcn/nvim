@@ -128,4 +128,12 @@ require('lazy').setup({
             vim.fn['mkdp#util#install']()
         end,
     },
+    { "startup-nvim/startup.nvim", opts = {theme = "dashboard"}},
+-- require("startup").setup({theme = "dashboard"}) -- put theme name here
+    {
+		"lervag/vimtex",
+		ft = {
+			"tex",
+		},
+	},
 }, {})
