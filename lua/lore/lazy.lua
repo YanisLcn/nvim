@@ -128,12 +128,18 @@ require('lazy').setup({
             vim.fn['mkdp#util#install']()
         end,
     },
-    { "startup-nvim/startup.nvim", opts = {theme = "dashboard"}},
--- require("startup").setup({theme = "dashboard"}) -- put theme name here
+
+    { 'startup-nvim/startup.nvim', opts = { theme = 'dashboard' } },
+
     {
-		"lervag/vimtex",
-		ft = {
-			"tex",
-		},
-	},
+        'lervag/vimtex',
+        ft = {
+            'tex',
+        },
+    },
+
+    {
+        'mizlan/iswap.nvim',
+        event = 'VeryLazy',
+    },
 }, {})
